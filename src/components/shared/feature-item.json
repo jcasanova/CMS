@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_feature_items",
+  "info": {
+    "displayName": "Feature Item",
+    "icon": "bulletList",
+    "description": "A single feature / capability (icon, title, description)."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 300
+    },
+    "iconName": {
+      "type": "string",
+      "maxLength": 40,
+      "description": "Optional icon library name (e.g. lucide-react: 'Brain', 'Cpu', 'Sparkles')."
+    },
+    "iconImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "link": {
+      "type": "string",
+      "description": "Optional href for the feature card."
+    }
+  }
+}
