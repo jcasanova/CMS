@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_callouts",
+  "info": {
+    "displayName": "Callout",
+    "icon": "exclamation-mark-circle",
+    "description": "Highlighted note / tip / warning block."
+  },
+  "options": {},
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "info",
+        "tip",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "default": "info",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "body": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
