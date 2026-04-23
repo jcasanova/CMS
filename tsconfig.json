@@ -39,6 +39,8 @@
     // Do not include test files
     "**/*.test.*",
     // Do not include plugins in the server compilation
-    "src/plugins/**"
+    "src/plugins/**",
+    // The Next.js site has its own tsconfig; don't compile it here
+    "web/"
   ]
 }

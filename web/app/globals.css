@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand — Hue / Enterprise AI */
+  --color-brand-50:  #E8F7EE;
+  --color-brand-100: #CBECD7;
+  --color-brand-200: #98D9AE;
+  --color-brand-300: #5FC184;
+  --color-brand-400: #2FA55E;
+  --color-brand-500: #1E8E3E;
+  --color-brand-600: #177A33;
+  --color-brand-700: #12602A;
+  --color-brand-800: #0F4D23;
+  --color-brand-900: #0B3A1B;
+
+  --color-accent-400: #22C55E;
+  --color-accent-500: #16A34A;
+  --color-accent-600: #15803D;
+
+  --color-ink-900: #0B1A10;
+  --color-ink-700: #1F2A22;
+  --color-ink-500: #4B5A50;
+  --color-ink-400: #6B7A70;
+
+  --color-paper: #FDFDFB;
+  --color-paper-muted: #F4F6F2;
+  --color-paper-border: #E6EAE3;
+
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink-900);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-pill: 9999px;
+}
+
+html, body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-brand-900);
+}

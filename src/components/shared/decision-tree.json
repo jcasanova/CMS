@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_decision_trees",
+  "info": {
+    "displayName": "Decision Tree",
+    "icon": "tree",
+    "description": "A flowchart of yes/no decisions to guide authors."
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "intro": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "diagram": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "diagramAlt": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.decision-node",
+      "min": 1,
+      "max": 15,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_shared_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "picture",
+    "description": "Page hero / cover block with title, subtitle, and background media."
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "Small label above the title (e.g. 'Enterprise AI Team')."
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 140
+    },
+    "subtitle": {
+      "type": "text",
+      "maxLength": 300
+    },
+    "version": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "meta": {
+      "type": "string",
+      "maxLength": 120,
+      "description": "Secondary meta line (e.g. 'Last updated: 10th Feb 2026')."
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "primaryCtaLabel": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "primaryCtaHref": {
+      "type": "string"
+    },
+    "secondaryCtaLabel": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "secondaryCtaHref": {
+      "type": "string"
+    }
+  }
+}

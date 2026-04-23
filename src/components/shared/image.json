@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "picture",
+    "description": "A standalone image block with optional caption."
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "alt": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "caption": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "width": {
+      "type": "enumeration",
+      "enum": [
+        "content",
+        "wide",
+        "full"
+      ],
+      "default": "content"
+    }
+  }
+}

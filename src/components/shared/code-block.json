@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_shared_code_blocks",
+  "info": {
+    "displayName": "Code Block",
+    "icon": "code",
+    "description": "A syntax-highlighted code snippet."
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "bash",
+        "css",
+        "html",
+        "javascript",
+        "json",
+        "jsx",
+        "markdown",
+        "python",
+        "scss",
+        "sql",
+        "tsx",
+        "typescript",
+        "yaml"
+      ],
+      "default": "typescript",
+      "required": true
+    },
+    "filename": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "code": {
+      "type": "text",
+      "required": true
+    },
+    "caption": {
+      "type": "string",
+      "maxLength": 200
+    }
+  }
+}

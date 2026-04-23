@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "pages",
+  "collectionName": "doc_pages",
   "info": {
-    "singularName": "page",
-    "pluralName": "pages",
-    "displayName": "Page",
-    "description": "A page of the website, composed of flexible content blocks."
+    "singularName": "doc-page",
+    "pluralName": "doc-pages",
+    "displayName": "Doc Page",
+    "description": "A documentation page (Welcome, Overview, Variables, Components, etc.)."
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +21,28 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 400
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::section.section",
+      "inversedBy": "docPages"
     },
     "blocks": {
       "type": "dynamiczone",
