@@ -465,6 +465,189 @@ const marketingPages: MarketingPageSeed[] = [
       },
     ],
   },
+  {
+    title: 'About',
+    slug: 'about',
+    blocks: [
+      {
+        __component: 'shared.hero',
+        eyebrow: 'About us',
+        title: 'Built by practitioners, for practitioners.',
+        subtitle:
+          'Enterprise AI is a team of clinicians, engineers, and designers building AI-native tools that simplify and unify health operations at scale.',
+      },
+      {
+        __component: 'shared.rich-text',
+        body: [
+          { type: 'paragraph', children: [{ type: 'text', text: "We partner with forward-thinking health organizations to reduce operational friction, surface what matters, and give every team member — from front-line staff to leadership — the information they need to act." }] },
+        ],
+      },
+      {
+        __component: 'shared.feature-grid',
+        heading: 'What drives us',
+        columns: '3',
+        features: [
+          { title: 'Outcomes over output', description: 'We measure success by the problems we solve, not the features we ship.', iconName: 'Target' },
+          { title: 'Design with care', description: 'Thoughtful, accessible, and consistent experiences on every surface.', iconName: 'Heart' },
+          { title: 'AI with guardrails', description: 'Useful, explainable, and safe — in that order.', iconName: 'Shield' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Meet the team',
+    slug: 'team',
+    blocks: [
+      {
+        __component: 'shared.hero',
+        eyebrow: 'Our team',
+        title: 'Meet the team.',
+        subtitle:
+          'A multidisciplinary group of clinicians, engineers, researchers, and designers shipping AI-native health tools.',
+        primaryCtaLabel: 'See open roles',
+        primaryCtaHref: '/careers',
+      },
+      {
+        __component: 'shared.section-heading',
+        eyebrow: "We're hiring",
+        heading: 'Build what health teams actually need.',
+        subheading:
+          "We're a small, remote-friendly team with a bias for action. If you want to help shape the future of intelligent, connected health, we'd love to hear from you.",
+        primaryCtaLabel: 'Talk to us',
+        primaryCtaHref: '/contact',
+      },
+    ],
+  },
+  {
+    title: 'Products',
+    slug: 'products',
+    blocks: [
+      {
+        __component: 'shared.hero',
+        eyebrow: 'Products',
+        title: 'One platform. Every surface.',
+        subtitle:
+          'From the Hue Design System to AI concierge support, our products unify health operations into a single intelligent workflow.',
+      },
+      {
+        __component: 'shared.feature-grid',
+        heading: 'What we build',
+        columns: '2',
+        features: [
+          {
+            title: 'Hue Design System',
+            description:
+              'A premium Figma library, themeable component kit, and decision framework — the foundation every surface is built on.',
+            iconName: 'Palette',
+            link: '/docs/welcome/welcome',
+          },
+          {
+            title: 'AI Concierge',
+            description:
+              "A conversational assistant that sits inside your workflow — answering questions, drafting follow-ups, and triaging next steps.",
+            iconName: 'Sparkles',
+          },
+          {
+            title: 'Productivity tools',
+            description:
+              'Focused utilities for scheduling, documentation, and chart review — designed to feel invisible when they work.',
+            iconName: 'Zap',
+          },
+          {
+            title: 'AI Agents',
+            description:
+              'Background agents that automate the long tail of repetitive operational tasks, with human review where it counts.',
+            iconName: 'Bot',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Resources',
+    slug: 'resources',
+    blocks: [
+      {
+        __component: 'shared.hero',
+        eyebrow: 'Resources',
+        title: 'Everything you need to build with Hue.',
+        subtitle:
+          'Guides, changelogs, and a growing library of posts from the team.',
+      },
+      {
+        __component: 'shared.feature-grid',
+        columns: '3',
+        features: [
+          {
+            title: 'Documentation',
+            description: 'Setup, theming, components, and icons for the Hue Design System.',
+            iconName: 'BookOpen',
+            link: '/docs',
+          },
+          {
+            title: 'Blog',
+            description: 'Product updates, engineering deep-dives, and design notes.',
+            iconName: 'Rss',
+            link: '/blog',
+          },
+          {
+            title: 'Talk to us',
+            description: 'Pilot requests, partnerships, and feedback — we read everything.',
+            iconName: 'MessageCircle',
+            link: '/contact',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Blog',
+    slug: 'blog',
+    blocks: [
+      {
+        __component: 'shared.hero',
+        eyebrow: 'Blog',
+        title: 'Notes from the team.',
+        subtitle:
+          'Product updates, design decisions, and engineering deep-dives from the Enterprise AI team.',
+      },
+      {
+        __component: 'shared.callout',
+        variant: 'info',
+        title: 'Coming soon',
+        body: [
+          { type: 'paragraph', children: [{ type: 'text', text: "We're setting up the blog — the first posts drop shortly. In the meantime, subscribe to the newsletter on the homepage to get notified." }] },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Talk to us',
+    slug: 'contact',
+    blocks: [
+      {
+        __component: 'shared.hero',
+        eyebrow: 'Contact',
+        title: "Let's talk.",
+        subtitle:
+          "Pilot requests, partnerships, feedback, or just to say hi — we'd love to hear from you.",
+      },
+      {
+        __component: 'shared.rich-text',
+        body: [
+          { type: 'heading', level: 2, children: [{ type: 'text', text: 'Ways to reach us' }] },
+          { type: 'paragraph', children: [
+            { type: 'text', text: 'Email ' },
+            { type: 'link', url: 'mailto:hello@enterprise.ai', children: [{ type: 'text', text: 'hello@enterprise.ai' }] },
+            { type: 'text', text: ' for general inquiries.' },
+          ] },
+          { type: 'paragraph', children: [
+            { type: 'text', text: 'For pilot or partnership requests, include a short note about your team, problem you want to solve, and ideal timeline.' },
+          ] },
+        ],
+      },
+    ],
+  },
 ];
 
 /* -------------------------- Run seed -------------------------- */

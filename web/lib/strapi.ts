@@ -282,3 +282,12 @@ export async function getPage(slug: string): Promise<Page | null> {
   });
   return res.data[0] ?? null;
 }
+
+export async function listPages(): Promise<Array<Pick<Page, "id" | "documentId" | "title" | "slug">>> {
+  const res = await strapiFetch<StrapiList<Page>>("/pages", {
+    "fields[0]": "title",
+    "fields[1]": "slug",
+    "pagination[pageSize]": 100,
+  });
+  return res.data;
+}

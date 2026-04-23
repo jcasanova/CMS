@@ -5,13 +5,14 @@ const columns: Array<{ title: string; links: Array<{ label: string; href: string
     title: "Product",
     links: [
       { label: "Hue Design System", href: "/docs/welcome/overview" },
-      { label: "Components", href: "/docs/components/overview" },
-      { label: "Updates", href: "/docs/updates/latest" },
+      { label: "Components", href: "/docs/library/components" },
+      { label: "Icons", href: "/docs/library/icons" },
     ],
   },
   {
     title: "Team",
     links: [
+      { label: "About", href: "/about" },
       { label: "Meet the team", href: "/team" },
       { label: "Blog", href: "/blog" },
       { label: "Talk to us", href: "/contact" },
