@@ -31,7 +31,10 @@
         "shared.callout",
         "shared.code-block",
         "shared.image",
-        "shared.feature-grid"
+        "shared.feature-grid",
+        "shared.decision-tree",
+        "shared.theme-preview",
+        "shared.icon-grid"
       ]
     },
     "seo": {

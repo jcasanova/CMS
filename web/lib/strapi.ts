@@ -149,6 +149,54 @@ export type FeatureGridBlock = BlockBase<"shared.feature-grid"> & {
   }>;
 };
 
+export type DecisionTreeBlock = BlockBase<"shared.decision-tree"> & {
+  heading?: string | null;
+  intro?: string | null;
+  diagram?: StrapiMedia | null;
+  diagramAlt?: string | null;
+  steps: Array<{
+    id: number;
+    question: string;
+    description?: string | null;
+    yesOutcome: string;
+    yesLink?: string | null;
+    noOutcome: string;
+    noLink?: string | null;
+  }>;
+};
+
+export type ColorSwatch = {
+  id: number;
+  name: string;
+  token?: string | null;
+  hex: string;
+  role?: "brand" | "accent" | "neutral" | "semantic" | "surface" | null;
+};
+
+export type ThemePreviewBlock = BlockBase<"shared.theme-preview"> & {
+  name: string;
+  description?: string | null;
+  lightPreview?: StrapiMedia | null;
+  darkPreview?: StrapiMedia | null;
+  swatches?: ColorSwatch[];
+  cssVariables?: string | null;
+};
+
+export type IconItem = {
+  id: number;
+  name: string;
+  iconName?: string | null;
+  iconImage?: StrapiMedia | null;
+  keywords?: string | null;
+};
+
+export type IconGridBlock = BlockBase<"shared.icon-grid"> & {
+  heading?: string | null;
+  description?: string | null;
+  columns: "3" | "4" | "5" | "6" | "8";
+  icons: IconItem[];
+};
+
 export type Block =
   | HeroBlock
   | SectionHeadingBlock
@@ -156,7 +204,10 @@ export type Block =
   | CalloutBlock
   | CodeBlockBlock
   | ImageBlock
-  | FeatureGridBlock;
+  | FeatureGridBlock
+  | DecisionTreeBlock
+  | ThemePreviewBlock
+  | IconGridBlock;
 
 /* ---------------- Fetchers ---------------- */
 

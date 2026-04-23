@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_color_swatches",
+  "info": {
+    "displayName": "Color Swatch",
+    "icon": "paint",
+    "description": "A single named color in a theme."
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60
+    },
+    "token": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "CSS variable or design-token name (e.g. 'brand/500')."
+    },
+    "hex": {
+      "type": "string",
+      "required": true,
+      "regex": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+      "maxLength": 9
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "brand",
+        "accent",
+        "neutral",
+        "semantic",
+        "surface"
+      ],
+      "default": "brand"
+    }
+  }
+}

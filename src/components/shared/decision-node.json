@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_decision_nodes",
+  "info": {
+    "displayName": "Decision Node",
+    "icon": "question",
+    "description": "A yes/no branch inside a decision tree."
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 400
+    },
+    "yesOutcome": {
+      "type": "text",
+      "required": true,
+      "maxLength": 300
+    },
+    "yesLink": {
+      "type": "string"
+    },
+    "noOutcome": {
+      "type": "text",
+      "required": true,
+      "maxLength": 300
+    },
+    "noLink": {
+      "type": "string"
+    }
+  }
+}

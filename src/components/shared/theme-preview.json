@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_shared_theme_previews",
+  "info": {
+    "displayName": "Theme Preview",
+    "icon": "palette",
+    "description": "A preview of a theme with swatches, light/dark images, and optional CSS."
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 400
+    },
+    "lightPreview": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "darkPreview": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "swatches": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.color-swatch",
+      "min": 0,
+      "max": 24
+    },
+    "cssVariables": {
+      "type": "text",
+      "description": "Optional CSS custom properties snippet shown with the preview."
+    }
+  }
+}

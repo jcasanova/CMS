@@ -6,6 +6,9 @@ import { CalloutBlockView } from "./callout";
 import { CodeBlockView } from "./code-block";
 import { ImageBlockView } from "./image";
 import { FeatureGridBlockView } from "./feature-grid";
+import { DecisionTreeBlockView } from "./decision-tree";
+import { ThemePreviewBlockView } from "./theme-preview";
+import { IconGridBlockView } from "./icon-grid";
 
 export function BlockRenderer({ block }: { block: Block }) {
   switch (block.__component) {
@@ -23,6 +26,12 @@ export function BlockRenderer({ block }: { block: Block }) {
       return <ImageBlockView block={block} />;
     case "shared.feature-grid":
       return <FeatureGridBlockView block={block} />;
+    case "shared.decision-tree":
+      return <DecisionTreeBlockView block={block} />;
+    case "shared.theme-preview":
+      return <ThemePreviewBlockView block={block} />;
+    case "shared.icon-grid":
+      return <IconGridBlockView block={block} />;
     default:
       return null;
   }

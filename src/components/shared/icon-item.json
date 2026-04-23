@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_icon_items",
+  "info": {
+    "displayName": "Icon Item",
+    "icon": "cube",
+    "description": "A single icon (library name or uploaded SVG)."
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60
+    },
+    "iconName": {
+      "type": "string",
+      "maxLength": 60,
+      "description": "Icon library name (e.g. lucide-react: 'Sparkles')."
+    },
+    "iconImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "keywords": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Comma-separated search keywords."
+    }
+  }
+}
