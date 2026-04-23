@@ -3,7 +3,7 @@
   "info": {
     "displayName": "Section Heading",
     "icon": "bold",
-    "description": "A titled section break with optional eyebrow and subheading."
+    "description": "A titled section break with optional eyebrow, subheading, and CTAs."
   },
   "options": {},
   "attributes": {
@@ -27,6 +27,20 @@
         "center"
       ],
       "default": "left"
+    },
+    "primaryCtaLabel": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "primaryCtaHref": {
+      "type": "string"
+    },
+    "secondaryCtaLabel": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "secondaryCtaHref": {
+      "type": "string"
     }
   }
 }

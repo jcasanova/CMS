@@ -109,6 +109,10 @@ export type SectionHeadingBlock = BlockBase<"shared.section-heading"> & {
   heading: string;
   subheading?: string | null;
   align?: "left" | "center";
+  primaryCtaLabel?: string | null;
+  primaryCtaHref?: string | null;
+  secondaryCtaLabel?: string | null;
+  secondaryCtaHref?: string | null;
 };
 
 export type RichTextBlock = BlockBase<"shared.rich-text"> & {
@@ -249,6 +253,31 @@ export async function getDocPage(
     ...DOC_PAGE_POPULATE,
     "filters[slug][$eq]": slug,
     "filters[section][slug][$eq]": sectionSlug,
+    "pagination[pageSize]": 1,
+  });
+  return res.data[0] ?? null;
+}
+
+/* ---------------- Marketing Pages ---------------- */
+
+export type Page = {
+  id: number;
+  documentId: string;
+  title: string;
+  slug: string;
+  blocks?: Block[];
+  seo?: Seo | null;
+};
+
+const PAGE_POPULATE = {
+  "populate[blocks][populate]": "*",
+  "populate[seo][populate]": "*",
+} satisfies Query;
+
+export async function getPage(slug: string): Promise<Page | null> {
+  const res = await strapiFetch<StrapiList<Page>>("/pages", {
+    ...PAGE_POPULATE,
+    "filters[slug][$eq]": slug,
     "pagination[pageSize]": 1,
   });
   return res.data[0] ?? null;

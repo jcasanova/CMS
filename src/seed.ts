@@ -43,6 +43,12 @@ type SectionSeed = {
   pages: DocPageSeed[];
 };
 
+type MarketingPageSeed = {
+  title: string;
+  slug: string;
+  blocks: Record<string, unknown>[];
+};
+
 type DocPageSeed = {
   title: string;
   slug: string;
@@ -404,15 +410,98 @@ export default function RootLayout({ children }) {
   },
 ];
 
+/* ---------------------- Marketing Pages ---------------------- */
+
+const marketingPages: MarketingPageSeed[] = [
+  {
+    title: 'Home',
+    slug: 'home',
+    blocks: [
+      {
+        __component: 'shared.hero',
+        title: 'Intelligent. Connected. Health.',
+        subtitle:
+          'We simplify, automate, and unify operations — reducing cost and enabling seamless, high-quality health experiences. With personal productivity tools, AI agents, and AI concierge support, we deliver faster, smarter, more connected interactions.',
+        primaryCtaLabel: 'Learn more about us',
+        primaryCtaHref: '/about',
+        secondaryCtaLabel: 'View Products',
+        secondaryCtaHref: '/products',
+      },
+      {
+        __component: 'shared.section-heading',
+        eyebrow: 'What we build',
+        heading: 'A design system and product suite for AI-native health teams.',
+        subheading:
+          'Hue is the design system behind Enterprise AI — a Figma kit, component library, and theming toolkit crafted for intelligent, connected experiences. Browse the documentation to get started.',
+        primaryCtaLabel: 'Explore the Hue Design System',
+        primaryCtaHref: '/docs/welcome/welcome',
+        secondaryCtaLabel: 'Browse docs',
+        secondaryCtaHref: '/docs',
+      },
+      {
+        __component: 'shared.feature-grid',
+        heading: 'Why teams choose Enterprise AI',
+        columns: '3',
+        features: [
+          {
+            title: 'Ship faster',
+            description:
+              'Pre-built patterns and an opinionated design system let your team focus on product, not primitives.',
+            iconName: 'Rocket',
+          },
+          {
+            title: 'Stay consistent',
+            description:
+              'One shared set of tokens and components across every surface — from marketing to admin.',
+            iconName: 'Layers',
+          },
+          {
+            title: 'Scale with AI',
+            description:
+              'Personal productivity tools, AI agents, and concierge support baked into the workflow.',
+            iconName: 'Sparkles',
+          },
+        ],
+      },
+    ],
+  },
+];
+
 /* -------------------------- Run seed -------------------------- */
 
 export async function seedIfEmpty(strapi: Core.Strapi): Promise<void> {
   // Always ensure public read access — idempotent and needed on every boot.
   await grantPublicReadPermissions(strapi);
 
+  await seedMarketingPages(strapi);
+  await seedDocsContent(strapi);
+}
+
+async function seedMarketingPages(strapi: Core.Strapi): Promise<void> {
+  const existing = await strapi.db.query('api::page.page').count();
+  if (existing > 0) {
+    strapi.log.info('[seed] Marketing pages already exist; skipping.');
+    return;
+  }
+
+  strapi.log.info('[seed] Seeding marketing pages…');
+  for (const page of marketingPages) {
+    await strapi.documents('api::page.page').create({
+      data: {
+        title: page.title,
+        slug: page.slug,
+        blocks: page.blocks as never,
+      },
+      status: 'published',
+    });
+    strapi.log.info(`[seed]   ✓ Page "${page.title}" (/${page.slug})`);
+  }
+}
+
+async function seedDocsContent(strapi: Core.Strapi): Promise<void> {
   const existing = await strapi.db.query('api::section.section').count();
   if (existing > 0) {
-    strapi.log.info('[seed] Sections already exist; skipping seed.');
+    strapi.log.info('[seed] Sections already exist; skipping docs seed.');
     return;
   }
 
